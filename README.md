@@ -67,7 +67,7 @@ Pick your AI client below to install the official Atlassian Rovo MCP Server. Eac
       <br><sub>Reference issues and log work in your codebase.</sub>
     </td>
     <td align="center" width="180">
-      <a href="https://insiders.vscode.dev/redirect/mcp/install?name=Atlassian-Rovo-MCP&config=%7B%22url%22%3A%22https%3A%2F%2Fmcp.atlassian.com%2Fv1%2Fmcp%2Fauthv2%22%2C%22type%22%3A%22http%22%7D">
+      <a href="https://vscode.dev/redirect/mcp/install?name=Atlassian-Rovo-MCP&config=%7B%22url%22%3A%22https%3A%2F%2Fmcp.atlassian.com%2Fv1%2Fmcp%2Fauthv2%22%2C%22type%22%3A%22http%22%7D">
         <img src="https://img.shields.io/badge/VS_Code-0098FF?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTE3LjUgMiA5LjIgOS42IDQuNiA2LjEgMyA2Ljl2MTAuMmwxLjYuOCA0LjYtMy41IDguMyA3LjZMMjEgMjFWM3pNNi40IDEybDIuOS0yLjJ2NC40em0xMS4xIDQuOS01LjQtNC45IDUuNC00Ljl6Ii8+PC9zdmc+&logoColor=white" alt="Add to VS Code"><br>
         <b>Add to VS Code</b>
       </a>
