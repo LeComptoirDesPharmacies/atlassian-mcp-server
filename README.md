@@ -55,7 +55,7 @@ It's built for developers, content creators, and project teams who work in IDEs 
 
 ## One-click setup
 
-Pick your AI client to install the official Atlassian Rovo MCP Server in a single click. Each button uses your client's native install deep link — no manual JSON config required.
+Pick your AI client below to install the official Atlassian Rovo MCP Server. Each button uses your client's native install link, so you don't need to edit any JSON config by hand.
 
 <table align="center">
   <tr>
