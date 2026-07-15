@@ -15,7 +15,7 @@ ENV_VAR="ATLASSIAN_ROVO_AUTH"
 ENV_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/lcdp/atlassian-rovo.env"
 
 read -rp  "Atlassian account email : " EMAIL
-read -rsp "Scoped API token (Bitbucket scopes) : " TOKEN; echo
+read -rsp "Scoped API token (Rovo MCP app, all scopes) : " TOKEN; echo
 [ -n "${EMAIL:-}" ] && [ -n "${TOKEN:-}" ] || { echo "email and token are both required" >&2; exit 1; }
 
 # Basic auth value = base64(email:token). Never printed.

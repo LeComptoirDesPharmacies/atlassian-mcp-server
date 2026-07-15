@@ -36,20 +36,18 @@ Token auth is a strict superset of what OAuth gave (Jira + Confluence), plus Bit
 | env var | `ATLASSIAN_ROVO_AUTH` = `base64(email:token)` |
 | env file | `${XDG_CONFIG_HOME:-$HOME/.config}/lcdp/atlassian-rovo.env` (mode `0600`) |
 
-## Prerequisites (org admin — blocking)
+## Org-side setup — already done (LCDP)
 
-Both are set on `admin.atlassian.com` and cannot be done from a dev machine:
-
-1. **Enable API-token auth** for the MCP server: **Admin Hub → Rovo → Rovo MCP server**.
-2. **Link the Bitbucket Cloud workspace to the Atlassian organization** (org-linked workspace).
-   Without this link, no `bitbucket*` tool is exposed regardless of the token.
-
-Reference: [Configuring authentication via API token](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/configuring-authentication-via-api-token/).
+The org-level prerequisites (API-token auth enabled for Rovo, and the Bitbucket Cloud workspace
+linked to the org) are **already configured by the LCDP admins** — no dev action. Debug hint only:
+if a valid token yields Jira/Confluence tools but **no `bitbucket*` tool**, the workspace link may
+have regressed — ping the admins.
 
 ## Token + the env var (never in a prompt)
 
 - Create a **scoped API token** at `id.atlassian.com/manage-profile/security/api-tokens` →
-  *Create API token with scopes*, granting the Bitbucket scopes you need (repos, PRs, pipelines…).
+  *Create API token with scopes* → select the app **Rovo MCP** → grant **all available scopes**
+  (covers Jira, Confluence and Bitbucket).
 - **Never paste the token into a Claude prompt** — it would land in the conversation transcript. The
   token is entered only in the dev's own terminal, by `setup-atlassian-rovo.sh`, which reads it
   silently, base64-encodes `email:token`, and writes it to the `0600` env file as:
@@ -76,6 +74,6 @@ onboarding step, and the `doctor` skill checks for it.
 
 The `Basic` value is `base64(email:token)` — trivially decodable, **not** encryption. It lives only
 in the `0600` env file (never in the MCP config, never in a prompt). Treat that file like a password:
-keep it `0600` and uncommitted, prefer a scoped token with the minimum Bitbucket scopes, and rotate
-the token if it leaks (including if it was ever pasted into a chat or added inline in an old
-`atlassian-rovo` MCP entry).
+keep it `0600` and uncommitted, use a token scoped to the **Rovo MCP** app, and rotate the token if
+it leaks (including if it was ever pasted into a chat or added inline in an old `atlassian-rovo` MCP
+entry).
